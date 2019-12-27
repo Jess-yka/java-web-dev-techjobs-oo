@@ -17,7 +17,7 @@ public class JobTests {
 
     @Test
     public void testSettingJobID(){
-        System.out.println(test1.getId() + " " + test2.getId());
+        //System.out.println(test1.getId() + " " + test2.getId());
         assertNotEquals(test1.getId(),test2.getId());
 }
 
@@ -40,12 +40,12 @@ public class JobTests {
     @Test
     public void testToString(){
         assertEquals(test1.toString(),
-                "Job{ID:__5__,"+
-                "\n NAME:__Dog Walker__,"+
-                "\n EMPLOYER:__ Pooches on the move__,"+
-                "\n LOCATION:__ St.Charles__,"+
-                "\n Position Type:__Walker___,"+
-                "\n Core Competency:___ Dogs__ "+
+                "Job{ID:__5__, "+
+                "\n NAME:__Dog Walker__, "+
+                "\n EMPLOYER:__ Pooches on the move__, "+
+                "\n LOCATION:__St.Charles__, "+
+                "\n Position Type:__Walker___, "+
+                "\n Core Competency: ___Dogs__ "+
                         "\n}"
         );
     }
