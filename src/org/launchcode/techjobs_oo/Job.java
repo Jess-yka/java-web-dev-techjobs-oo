@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Job {
     private int id;
     private static int nextId = 1;
-    private String value;
+
 
     private String name;
     private Employer employer;
@@ -13,21 +13,18 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-    public Job(){
+    public Job() {
         id = nextId;
         nextId++;
     }
 
-    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
-
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-
-
 
 
     }
@@ -41,7 +38,7 @@ public class Job {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Job)) return false;
         Job job = (Job) o;
         return id == job.id;
     }
@@ -56,34 +53,67 @@ public class Job {
 
 
     public int getId() {
+
         return id;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public Employer getEmployer() {
+
         return employer;
     }
 
+
+    @Override
+    public String toString() {
+        if (this.name == null) {
+            name = "Data Not Available";
+        }
+        if (this.employer == null) {
+            String employer = "Data Not Available";
+        }
+        if (this.location == null) {
+            String location = "Data Not Available";
+        }
+        if (this.positionType == null) {
+            String positionType = "Data Not Available";
+        }
+        if (this.coreCompetency == null) {
+            String coreCompetency = "Data Not Available";
+        }
+        System.out.println("");
+        return "Job{" + "ID:__" + getId() + "__, \n NAME:__" + getName() + "__, \n EMPLOYER:__ " + getEmployer() + "__, \n LOCATION:__" + getLocation() +
+                "__, \n Position Type:__" + getPositionType() + "___, \n Core Competency: ___" + getCoreCompetency() + "__ \n" + '}';
+    }
+
     public void setEmployer(Employer employer) {
+
         this.employer = employer;
     }
 
+
+    public PositionType getPositionType() {
+
+        return positionType;
+    }
+
+    public void setPositionType(PositionType positionType) {
+
+        this.positionType = positionType;
+    }
+
     public Location getLocation() {
+
         return location;
     }
 
@@ -91,19 +121,14 @@ public class Job {
         this.location = location;
     }
 
-    public PositionType getPositionType() {
-        return positionType;
-    }
-
-    public void setPositionType(PositionType positionType) {
-        this.positionType = positionType;
-    }
-
     public CoreCompetency getCoreCompetency() {
+
         return coreCompetency;
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
+
         this.coreCompetency = coreCompetency;
     }
+
 }
